@@ -4,7 +4,7 @@ int rage, ie how close you are to getting beat
 String name==> your name/character
 
 constructors
-survive ==> takes in name variable.
+survive ==> takes in name variable and uses it in future story game play
 
 methods
 weekdayOrWeekend ==> difficulty, weekends harder because you have to spend more time at home. set rage meter differently.
