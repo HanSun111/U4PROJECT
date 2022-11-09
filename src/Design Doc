@@ -3,14 +3,19 @@ int day, ie number of times player has tried
 int rage, ie how close you are to getting beat
 String name==> your name/character
 
-methods 
+constructors
+survive ==> takes in name variable.
+
+methods
 weekdayOrWeekend ==> difficulty, weekends harder because you have to spend more time at home. set rage meter differently.
 preferredFutureOccupation ==> gives you a list of jobs for the future. depending on what you pick, the rage meter might start differently.
-GettingOutOfBed==> roll a random number between 6 to 12, the number you roll is the time you would wake up, if it is a weekday, the latest you can wake up is 8 without filling rage and on weekends, you can sleep until 10.
+GettingOutOfBed==> roll a random number between 6 to 12, the number you roll is the time you would wake up, if it is a weekday, the latest you can wake up is 8 without filling rage and on weekends, you can sleep until 10. if rage meter is less than a certain amount, you get a alarm that helps you wake up.
 doSomeChores==> can choose to yes or no, if choose no, rage meter goes up for not helping mom, if choose yes, rage meter can go down depending on how much chores you do.
-
-
-
+confront mom ==> mom stops to talk to you about stuff, answer might fill rage meter
+eat==> pick what to eat, choose carefully or you might enrage mother.
+studyOrPlayGames==> we all know which choice fill up the rage meter.
+SleepWhen ==> roll dice from 9 to 3 to determine when to sleep
+gameplay==> puts all the methods together.
 
 
 
