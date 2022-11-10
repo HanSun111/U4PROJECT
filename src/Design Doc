@@ -16,6 +16,7 @@ eat==> pick what to eat, choose carefully or you might enrage mother.
 studyOrPlayGames==> we all know which choice fill up the rage meter.
 SleepWhen ==> roll dice from 9 to 3 to determine when to sleep
 gameplay==> puts all the methods together.
+YOLO ==> randomize difficulty
 
 
 
