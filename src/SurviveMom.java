@@ -7,6 +7,17 @@ public class SurviveMom {
         this.name = name;
     }
 
+    public String weekdayOrWeekend(int oneToSeven){
+        if(oneToSeven >=1 && oneToSeven<=5){
+            return "Taking it eazy I see";
+        }
+        else if(oneToSeven >5 && oneToSeven<=7){
+            rageMeter += 5;
+            return "Hardcore man, staying home during a weekend. " + getRageMeter();
+        }
+        else return "Last time I counted, there was only seven days in a week.";
+    }
+
     public String getRageMeter() {
         String dialogue = "";
         if(rageMeter <= 20 ){
@@ -25,24 +36,15 @@ public class SurviveMom {
             dialogue += "Dude, stop. you're at death's door.";
         }
         if(rageMeter >= 100){
-            dialogue = "";
+            dialogue = "/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
         }
 
         return "Mom's rage is at: " + rageMeter + "%\n" + dialogue;
     }
 
-/*
-
-/=============\
-|             |
-|    R.I.P    |
-|             |
-|    DON'T    |
-|     PISS    |
-|    OFF      |
-|     MOM!    |
-----------------
- */
+    public String gameEnder(){
+        while(rageMeter < )
+    }
 
 
 }
