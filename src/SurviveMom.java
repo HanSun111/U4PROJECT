@@ -64,9 +64,19 @@ public class SurviveMom {
             int changeToColon = school.indexOf(".");
             String timeForWeekday = school.substring(0, changeToColon) + ":00";
         }
-        if(weekday <= 8){
+        else if(weekday <= 8 && (weekday % ((int)weekday) > 0.59)){
             int changeToColon = school.indexOf(".");
-            String timeForWeekday = school.substring(0, changeToColon) + ":" + school.substring(changeToColon + 1, changeToColon + 3);
+            String timeForWeekday = school.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
+        }
+
+        if(weekend % ((int)weekend) > 0.59 && weekend <= 8){
+            weekend = (int)weekend;
+            int changeToColon = school.indexOf(".");
+            String timeForWeekend = noSchool.substring(0, changeToColon) + ":00";
+        }
+        else if(weekend <= 8 && (weekend % ((int)weekend) < 0.59)){
+            int changeToColon = school.indexOf(".");
+            String timeForWeekday = noSchool.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
         }
     }
 
