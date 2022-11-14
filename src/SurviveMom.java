@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SurviveMom {
     private String name;
     private int day;
@@ -17,7 +19,7 @@ public class SurviveMom {
         }
         else return "Last time I counted, there was only seven days in a week.";
     }
-
+    ArrayList list = new ArrayList<Double>();
     public String getRageMeter() {
         String dialogue = "";
         if(rageMeter <= 20 ){
@@ -36,15 +38,36 @@ public class SurviveMom {
             dialogue += "Dude, stop. you're at death's door.";
         }
         if(rageMeter >= 100){
-            dialogue = "/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
+            dialogue += "/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
         }
 
         return "Mom's rage is at: " + rageMeter + "%\n" + dialogue;
     }
 
-    public String gameEnder(){
-        while(rageMeter < )
+    public boolean gameEnder(){
+        if(rageMeter > 100 ){
+            return true;
+        } return false;
     }
 
+
+    public String rollForTime(String ready){
+        double weekday = 6 + Math.random() * 5;
+        double weekend = 6 + Math.random() * 7;
+        String school = String.valueOf(weekday);
+        String noSchool = String.valueOf(weekday);
+        while(ready.equals("N")){
+            return "Welp, I'll wait... I've got all the time in the world";
+        }
+        if(weekday % ((int)weekday) > 0.59 && weekday <= 8){
+            weekday = (int)weekday;
+            int changeToColon = school.indexOf(".");
+            String timeForWeekday = school.substring(0, changeToColon) + ":00";
+        }
+        if(weekday <= 8){
+            int changeToColon = school.indexOf(".");
+            String timeForWeekday = school.substring(0, changeToColon) + ":" + school.substring(changeToColon + 1, changeToColon + 3);
+        }
+    }
 
 }
