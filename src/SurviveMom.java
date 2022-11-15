@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class SurviveMom {
     private String name;
     private int day;
@@ -10,20 +8,27 @@ public class SurviveMom {
     }
 
     public String weekdayOrWeekend(int oneToSeven){
+        day = oneToSeven;
         if(oneToSeven >=1 && oneToSeven<=5){
             return "Taking it eazy I see";
         }
         else if(oneToSeven >5 && oneToSeven<=7){
             rageMeter += 5;
-            return "Hardcore man, staying home during a weekend. " + getRageMeter();
+            return "Hardcore" + name + ", staying home during a weekend. " + getRageMeter();
         }
         else return "Last time I counted, there was only seven days in a week.";
     }
-    ArrayList list = new ArrayList<Double>();
+
+    public boolean weekdayOrWeekend(){
+        if(day <= 5){
+            return true;
+        } return false;
+    }
+
     public String getRageMeter() {
         String dialogue = "";
         if(rageMeter <= 20 ){
-            dialogue += "Mom's in a pretty good mood right now, don't mess it up";
+            dialogue += "Mom's in a pretty good mood right now, don't mess it up" + name;
         }
         if(rageMeter <= 40 && rageMeter > 20){
             dialogue += "Mom is getting a bit cranky... GET ON HER GOOD SIDE";
@@ -35,13 +40,18 @@ public class SurviveMom {
             dialogue += "Mom feels benevolent today, you can now choose how you get beat up. ";
         }
         if(rageMeter <= 99 && rageMeter > 80){
-            dialogue += "Dude, stop. you're at death's door.";
+            dialogue += name + ", stop. you're at death's door.";
         }
         if(rageMeter >= 100){
             dialogue += "/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
         }
 
         return "Mom's rage is at: " + rageMeter + "%\n" + dialogue;
+    }
+
+
+    public String yourFutureOccupation(int pick){
+
     }
 
     public boolean gameEnder(){
@@ -51,33 +61,49 @@ public class SurviveMom {
     }
 
 
-    public String rollForTime(String ready){
+    public String rollForTime(String ready) {
         double weekday = 6 + Math.random() * 5;
         double weekend = 6 + Math.random() * 7;
+
         String school = String.valueOf(weekday);
         String noSchool = String.valueOf(weekday);
-        while(ready.equals("N")){
+        String timeForWeekday = "";
+        String timeForWeekend = "";
+
+        while (ready.equals("N") || ready.equals("n")) {
             return "Welp, I'll wait... I've got all the time in the world";
         }
-        if(weekday % ((int)weekday) > 0.59 && weekday <= 8){
-            weekday = (int)weekday;
-            int changeToColon = school.indexOf(".");
-            String timeForWeekday = school.substring(0, changeToColon) + ":00";
+        if (weekdayOrWeekend()) {
+            if (weekday >= 8) {
+                rageMeter = rageMeter + (int) ((weekday - 8) * 8);
+            }
+            if ((weekday % ((int) weekday)) > 0.59 ) {
+                weekday = (int) weekday;
+                int changeToColon = school.indexOf(".");
+                timeForWeekday = school.substring(0, changeToColon) + ":00";
+            }
+            else if ((weekday % ((int) weekday) > 0.59)) {
+                int changeToColon = school.indexOf(".");
+                timeForWeekday = school.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
+            }
+            return "you woke up at " + timeForWeekday + getRageMeter();
         }
-        else if(weekday <= 8 && (weekday % ((int)weekday) > 0.59)){
-            int changeToColon = school.indexOf(".");
-            String timeForWeekday = school.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
+        else if (!weekdayOrWeekend()) {
+            if (weekend >= 10) {
+                rageMeter = rageMeter + (int) ((weekend - 10) * 10);
+            }
+            if (weekend % ((int) weekend) > 0.59) {
+                weekend = (int) weekend;
+                int changeToColon = school.indexOf(".");
+                timeForWeekend = noSchool.substring(0, changeToColon) + ":00";
+            }
+            else if ((weekend % ((int) weekend) < 0.59)) {
+                int changeToColon = school.indexOf(".");
+                timeForWeekend = noSchool.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
+            }
+            return "you woke up at " + timeForWeekend + getRageMeter();
         }
-
-        if(weekend % ((int)weekend) > 0.59 && weekend <= 8){
-            weekend = (int)weekend;
-            int changeToColon = school.indexOf(".");
-            String timeForWeekend = noSchool.substring(0, changeToColon) + ":00";
-        }
-        else if(weekend <= 8 && (weekend % ((int)weekend) < 0.59)){
-            int changeToColon = school.indexOf(".");
-            String timeForWeekday = noSchool.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
-        }
+        return "This wasn't suppose to happen.";
     }
 
 }
