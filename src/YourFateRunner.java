@@ -10,7 +10,7 @@ public class YourFateRunner {
             System.out.println("Input a number to signify which day of the week you want to play(1 is mon, 7 is sun): ");
             int day = mamaOHOHOHHHHH.nextInt();
 
-            System.out.println("You are sleeping like a baby on crack, ready to wake up?")
+            System.out.println("You are sleeping like a baby on crack, ready to wake up? (y/n)")
         }
 
 
