@@ -49,9 +49,16 @@ public class SurviveMom {
         return "Mom's rage is at: " + rageMeter + "%\n" + dialogue;
     }
 
-
+// add a print statement in runner class that introduces some jobs. Here's a list ==> freeloader, coder, lawyer, doctor, actor, pro gamer, streamer, designer etc
     public String yourFutureOccupation(int pick){
-
+        String dialogue = "";
+        if(pick > 5){
+            rageMeter = rageMeter + (10 * (pick - 5));
+            dialogue += "you have picked a dead end existence. " + getRageMeter();
+            return dialogue;
+        }
+        dialogue += "you have picked a good job, mom's anger meter did not go up.";
+        return dialogue;
     }
 
     public boolean gameEnder(){
@@ -82,12 +89,13 @@ public class SurviveMom {
                 int changeToColon = school.indexOf(".");
                 timeForWeekday = school.substring(0, changeToColon) + ":00";
             }
-            else if ((weekday % ((int) weekday) > 0.59)) {
+            else if ((weekday % ((int) weekday) < 0.59)) {
                 int changeToColon = school.indexOf(".");
                 timeForWeekday = school.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
             }
             return "you woke up at " + timeForWeekday + getRageMeter();
         }
+
         else if (!weekdayOrWeekend()) {
             if (weekend >= 10) {
                 rageMeter = rageMeter + (int) ((weekend - 10) * 10);
