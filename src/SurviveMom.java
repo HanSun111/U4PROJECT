@@ -3,10 +3,18 @@ public class SurviveMom {
     private int day;
     private int rageMeter = 0;
 
+    private int age = 0;
+
     public SurviveMom(String name){
         this.name = name;
     }
-
+    public SurviveMom(String name, int age) {
+        this.name = name;
+        this.age = age;
+        if(age > 15){
+            rageMeter += (age-15);
+        }
+    }
     /**
      *
      * @param oneToSeven
@@ -96,7 +104,7 @@ public class SurviveMom {
         String timeForWeekday = "";
         String timeForWeekend = "";
 
-        while (ready.equals("N") || ready.equals("n") || ready.equals("no") || ready.equals("No")) {
+        if (ready.equals("N") || ready.equals("n") || ready.equals("no") || ready.equals("No")) {
             return "Welp, I'll wait... I've got all the time in the world";
         }
         if (weekdayOrWeekend()) {
@@ -104,13 +112,13 @@ public class SurviveMom {
                 rageMeter = rageMeter + (int) ((weekday - 8) * 8);
             }
             if ((weekday % ((int) weekday)) > 0.59 ) {
-                weekday = (int) weekday;
+                weekday = (int) (weekday+1);
                 int changeToColon = school.indexOf(".");
-                timeForWeekday = school.substring(0, changeToColon) + ":00";
+                timeForWeekday = school.substring(0, changeToColon) + ":00 ";
             }
             else if ((weekday % ((int) weekday) < 0.59)) {
                 int changeToColon = school.indexOf(".");
-                timeForWeekday = school.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
+                timeForWeekday = school.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3 ) + " ";
             }
             return "you woke up at " + timeForWeekday + getRageMeter();
         }
@@ -120,7 +128,7 @@ public class SurviveMom {
                 rageMeter = rageMeter + (int) ((weekend - 10) * 10);
             }
             if (weekend % ((int) weekend) > 0.59) {
-                weekend = (int) weekend;
+                weekend = (int) (weekend+1);
                 int changeToColon = school.indexOf(".");
                 timeForWeekend = noSchool.substring(0, changeToColon) + ":00";
             }
@@ -131,6 +139,13 @@ public class SurviveMom {
             return "you woke up at " + timeForWeekend + getRageMeter();
         }
         return "This wasn't suppose to happen.";
+    }
+
+    public String doSomeChores(String yeOrNah){
+        return getRageMeter();
+    }
+    public void reset(){
+        rageMeter = 0;
     }
 
 }

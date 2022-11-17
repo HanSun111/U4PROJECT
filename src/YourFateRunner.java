@@ -5,7 +5,16 @@ public class YourFateRunner {
         Scanner mamaOHOHOHHHHH = new Scanner(System.in);
         System.out.println("Welcome to Survive Mom Simulator. Input a character name: ");
         String name = mamaOHOHOHHHHH.nextLine();
-        SurviveMom s = new SurviveMom(name);
+        SurviveMom s = new SurviveMom(name);;
+
+        System.out.println("You can choose to select an age to be at, but keep in mind this might make the game more difficult. \n do you wish to do so? y/n");
+        String decideAnAge = mamaOHOHOHHHHH.nextLine();
+
+        if(decideAnAge.equals("y") || decideAnAge.equals("Y")){
+            System.out.println("input age: ");
+            int age = mamaOHOHOHHHHH.nextInt();
+            s = new SurviveMom(name, age);
+        }
 
         while(!s.gameEnder()){
             System.out.println("Input a number to signify which day of the week you want to play(1 is mon, 7 is sun): ");
@@ -13,7 +22,9 @@ public class YourFateRunner {
             System.out.println(s.weekdayOrWeekend(day));
             System.out.println("You are sleeping like a baby on crack, ready to wake up? (y/n)");
             String areYouReadyKids = mamaOHOHOHHHHH.nextLine();
-            System.out.println(s.rollForTime(areYouReadyKids));
+            if(areYouReadyKids.equals("y")){
+                System.out.println(s.rollForTime(areYouReadyKids));
+            }
             while(areYouReadyKids.equals("n")){
                 String areYouReadyKid = mamaOHOHOHHHHH.nextLine();
                 System.out.println(s.rollForTime(areYouReadyKid));
@@ -25,11 +36,11 @@ public class YourFateRunner {
             // to be implemented minigames throughout the day with mom.
 
 
-
+            s.reset();
             daysSurvived++;
         }
 
 
-        System.out.println("you survived " + daysSurvived + "days");
+        System.out.println("you survived " + daysSurvived + " days");
     }
 }
