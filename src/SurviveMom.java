@@ -40,7 +40,7 @@ public class SurviveMom {
             dialogue += "Mom's in a pretty good mood right now, don't mess it up" + name;
         }
         if(rageMeter <= 40 && rageMeter > 20){
-            dialogue += "Mom is getting a bit cranky... GET ON HER GOOD SIDE";
+            dialogue += "Mom is getting a bit cranky... GET ON HER GOOD SIDE " + name + "!!!";
         }
         if(rageMeter <= 60 && rageMeter > 40){
             dialogue += "Mom is wondering why she ever wanted a child, you're walking on thin ice pal";
