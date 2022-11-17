@@ -7,6 +7,11 @@ public class SurviveMom {
         this.name = name;
     }
 
+    /**
+     *
+     * @param oneToSeven
+     * @return
+     */
     public String weekdayOrWeekend(int oneToSeven){
         day = oneToSeven;
         if(oneToSeven >=1 && oneToSeven<=5){
@@ -19,6 +24,10 @@ public class SurviveMom {
         else return "Last time I counted, there was only seven days in a week.";
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean weekdayOrWeekend(){
         if(day <= 5){
             return true;
@@ -50,10 +59,16 @@ public class SurviveMom {
     }
 
 // add a print statement in runner class that introduces some jobs. Here's a list ==> freeloader, coder, lawyer, doctor, actor, pro gamer, streamer, designer etc
+
+    /**
+     *
+     * @param pick
+     * @return
+     */
     public String yourFutureOccupation(int pick){
         String dialogue = "";
-        if(pick > 5){
-            rageMeter = rageMeter + (10 * (pick - 5));
+        if(pick >= 5){
+            rageMeter = rageMeter + (10 * (pick - 4));
             dialogue += "you have picked a dead end existence. " + getRageMeter();
             return dialogue;
         }
@@ -67,7 +82,11 @@ public class SurviveMom {
         } return false;
     }
 
-
+    /**
+     *
+     * @param ready
+     * @return
+     */
     public String rollForTime(String ready) {
         double weekday = 6 + Math.random() * 5;
         double weekend = 6 + Math.random() * 7;
@@ -77,7 +96,7 @@ public class SurviveMom {
         String timeForWeekday = "";
         String timeForWeekend = "";
 
-        while (ready.equals("N") || ready.equals("n")) {
+        while (ready.equals("N") || ready.equals("n") || ready.equals("no") || ready.equals("No")) {
             return "Welp, I'll wait... I've got all the time in the world";
         }
         if (weekdayOrWeekend()) {
