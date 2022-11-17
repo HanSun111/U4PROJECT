@@ -18,7 +18,6 @@ public class YourFateRunner {
                 String areYouReadyKid = mamaOHOHOHHHHH.nextLine();
                 System.out.println(s.rollForTime(areYouReadyKid));
             }
-
             System.out.println("Now, this is a multiple choice question. \n your dream occupation when you reach adult hood is \n");
             System.out.println(" 1. Doctor \n 2. lawyer \n 3. coder \n 4. scientist \n 5. actor \n 6. streamer \n 7. Freeloader");
             int num = mamaOHOHOHHHHH.nextInt();

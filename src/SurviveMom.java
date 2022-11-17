@@ -37,13 +37,13 @@ public class SurviveMom {
     public String getRageMeter() {
         String dialogue = "";
         if(rageMeter <= 20 ){
-            dialogue += "Mom's in a pretty good mood right now, don't mess it up" + name;
+            dialogue += "Mom's in a pretty good mood right now, don't mess it up " + name;
         }
         if(rageMeter <= 40 && rageMeter > 20){
             dialogue += "Mom is getting a bit cranky... GET ON HER GOOD SIDE " + name + "!!!";
         }
         if(rageMeter <= 60 && rageMeter > 40){
-            dialogue += "Mom is wondering why she ever wanted a child, you're walking on thin ice pal";
+            dialogue += "Mom is wondering why she ever wanted a child, you're walking on thin ice " + name;
         }
         if(rageMeter <= 80 && rageMeter > 60){
             dialogue += "Mom feels benevolent today, you can now choose how you get beat up. ";
