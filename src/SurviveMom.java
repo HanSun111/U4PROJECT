@@ -1,6 +1,7 @@
 public class SurviveMom {
     private String name;
     private int day;
+    private double wakeUpTime;
     private int rageMeter = 0;
 
     public SurviveMom(String name){
@@ -34,10 +35,13 @@ public class SurviveMom {
         } return false;
     }
 
+    public void rageMaxed(){
+
+    }
     public String getRageMeter() {
         String dialogue = "";
         if(rageMeter <= 20 ){
-            dialogue += "Mom's in a pretty good mood right now, don't mess it up" + name;
+            dialogue += "Mom's in a pretty good mood right now, don't mess it up " + name;
         }
         if(rageMeter <= 40 && rageMeter > 20){
             dialogue += "Mom is getting a bit cranky... GET ON HER GOOD SIDE " + name + "!!!";
@@ -55,7 +59,7 @@ public class SurviveMom {
             dialogue += "/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
         }
 
-        return "Mom's rage is at: " + rageMeter + "%\n" + dialogue;
+        return "\nMom's rage is at: " + rageMeter + "%\n" + dialogue;
     }
 
 // add a print statement in runner class that introduces some jobs. Here's a list ==> freeloader, coder, lawyer, doctor, actor, pro gamer, streamer, designer etc
@@ -82,33 +86,41 @@ public class SurviveMom {
         } return false;
     }
 
+    public double sleepUntil(){
+        if(weekdayOrWeekend()){
+            wakeUpTime = 6 + Math.random() * 5;
+            return wakeUpTime;
+        }
+        else wakeUpTime = 6 + Math.random() * 7;
+        return  wakeUpTime;
+    }
+
     /**
      *
-     * @param ready
+     * @param
      * @return
      */
-    public String rollForTime(String ready) {
-        double weekday = 6 + Math.random() * 5;
-        double weekend = 6 + Math.random() * 7;
+    public String rollForTime(double time) {
+        //double weekday = 6 + Math.random() * 5;
+        //double weekend = 6 + Math.random() * 7;
+        double wakeUp = time;
 
-        String school = String.valueOf(weekday);
-        String noSchool = String.valueOf(weekday);
+        String school = String.valueOf(wakeUp);
+        String noSchool = String.valueOf(wakeUp);
         String timeForWeekday = "";
         String timeForWeekend = "";
 
-        while (ready.equals("N") || ready.equals("n") || ready.equals("no") || ready.equals("No")) {
-            return "Welp, I'll wait... I've got all the time in the world";
-        }
+
         if (weekdayOrWeekend()) {
-            if (weekday >= 8) {
-                rageMeter = rageMeter + (int) ((weekday - 8) * 8);
+            if (wakeUp >= 8) {
+                rageMeter = rageMeter + (int) ((wakeUp - 8) * 8);
             }
-            if ((weekday % ((int) weekday)) > 0.59 ) {
-                weekday = (int) weekday;
+            if ((wakeUp % ((int) wakeUp)) > 0.59 ) {
+                wakeUp = (int) wakeUp;
                 int changeToColon = school.indexOf(".");
                 timeForWeekday = school.substring(0, changeToColon) + ":00";
             }
-            else if ((weekday % ((int) weekday) < 0.59)) {
+            else if ((wakeUp % ((int) wakeUp) < 0.59)) {
                 int changeToColon = school.indexOf(".");
                 timeForWeekday = school.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
             }
@@ -116,15 +128,15 @@ public class SurviveMom {
         }
 
         else if (!weekdayOrWeekend()) {
-            if (weekend >= 10) {
-                rageMeter = rageMeter + (int) ((weekend - 10) * 10);
+            if (wakeUp >= 10) {
+                rageMeter = rageMeter + (int) ((wakeUp - 10) * 10);
             }
-            if (weekend % ((int) weekend) > 0.59) {
-                weekend = (int) weekend;
+            if (wakeUp % ((int) wakeUp) > 0.59) {
+                wakeUp = (int) wakeUp;
                 int changeToColon = school.indexOf(".");
                 timeForWeekend = noSchool.substring(0, changeToColon) + ":00";
             }
-            else if ((weekend % ((int) weekend) < 0.59)) {
+            else if ((wakeUp % ((int) wakeUp) < 0.59)) {
                 int changeToColon = school.indexOf(".");
                 timeForWeekend = noSchool.substring(0, changeToColon) + ":" + noSchool.substring(changeToColon + 1, changeToColon + 3);
             }

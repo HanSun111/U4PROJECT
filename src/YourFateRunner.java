@@ -11,13 +11,13 @@ public class YourFateRunner {
             System.out.println("Input a number to signify which day of the week you want to play(1 is mon, 7 is sun): ");
             int day = mamaOHOHOHHHHH.nextInt();
             System.out.println(s.weekdayOrWeekend(day));
-            System.out.println("You are sleeping like a baby on crack, ready to wake up? (y/n)");
-            String areYouReadyKids = mamaOHOHOHHHHH.nextLine();
-            System.out.println(s.rollForTime(areYouReadyKids));
-            while(areYouReadyKids.equals("n")){
-                String areYouReadyKid = mamaOHOHOHHHHH.nextLine();
-                System.out.println(s.rollForTime(areYouReadyKid));
+            System.out.println("You are sleeping like a baby on crack, ready to wake up? press 1 to continue");
+            int wakeUpOrNah = mamaOHOHOHHHHH.nextInt();
+            while(wakeUpOrNah != 1){
+                System.out.println("Bro, that ain't the number 1 @-@");
+                wakeUpOrNah = mamaOHOHOHHHHH.nextInt();
             }
+            System.out.println(s.rollForTime(s.sleepUntil()));
 
             System.out.println("Now, this is a multiple choice question. \n your dream occupation when you reach adult hood is \n");
             System.out.println(" 1. Doctor \n 2. lawyer \n 3. coder \n 4. scientist \n 5. actor \n 6. streamer \n 7. Freeloader");
