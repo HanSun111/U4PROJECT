@@ -1,18 +1,26 @@
 public class SurviveMom {
     private String name;
+    private int age;
     private int day;
     private double wakeUpTime;
     private int rageMeter = 0;
-
     public SurviveMom(String name){
         this.name = name;
     }
 
-    /**
-     *
-     * @param oneToSeven
-     * @return
-     */
+    public SurviveMom(String name, int age) {
+        this.name = name;
+        this.age = age;
+        if (age > 15) {
+            rageMeter += (age - 15);
+        }
+    }
+
+        /**
+         *
+         * @param oneToSeven
+         * @return
+         */
     public String weekdayOrWeekend(int oneToSeven){
         day = oneToSeven;
         if(oneToSeven >=1 && oneToSeven<=5){
@@ -101,15 +109,12 @@ public class SurviveMom {
      * @return
      */
     public String rollForTime(double time) {
-        //double weekday = 6 + Math.random() * 5;
-        //double weekend = 6 + Math.random() * 7;
         double wakeUp = time;
 
         String school = String.valueOf(wakeUp);
         String noSchool = String.valueOf(wakeUp);
         String timeForWeekday = "";
         String timeForWeekend = "";
-
 
         if (weekdayOrWeekend()) {
             if (wakeUp >= 8) {
@@ -143,6 +148,15 @@ public class SurviveMom {
             return "you woke up at " + timeForWeekend + getRageMeter();
         }
         return "This wasn't suppose to happen.";
+    }
+
+    public String choresAndStudy(String doItBro){
+        if(doItBro.equals("y")){
+            rageMeter= rageMeter - (int)(Math.random() * 15) + 1;
+            return "Mom is pleased her lazy child is finally doing something she can tell to her relatives with some sort of pride \nshe decided to be a little less mad at you. \n" + getRageMeter();
+        } else
+            rageMeter = rageMeter + (int)(Math.random() * 5) + 1;
+            return "Welp, mom expected that out of you, and she's not mad, just disappointed. \nJK. she's a bit pissed. " + getRageMeter();
     }
 
 }

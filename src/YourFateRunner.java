@@ -7,14 +7,14 @@ public class YourFateRunner {
         String name = mamaOHOHOHHHHH.nextLine();
         SurviveMom s = new SurviveMom(name);;
 
-        System.out.println("You can choose to select an age to be at, but keep in mind this might make the game more difficult. \n do you wish to do so? y/n");
+        System.out.println("You can choose to select an age to be at, but keep in mind this might make the game more difficult  \nThe older you are the more angry mom is gonna be that you still live with her\n do you wish to do so? y/n");
         String decideAnAge = mamaOHOHOHHHHH.nextLine();
 
-        /*if(decideAnAge.equals("y") || decideAnAge.equals("Y")){
+        if(decideAnAge.equals("y") || decideAnAge.equals("Y")){
             System.out.println("input age: ");
             int age = mamaOHOHOHHHHH.nextInt();
             s = new SurviveMom(name, age);
-        }*/
+        }
 
         while(!s.gameEnder()){
             System.out.println("Input a number to signify which day of the week you want to play(1 is mon, 7 is sun): ");
@@ -34,14 +34,19 @@ public class YourFateRunner {
             System.out.println(" 1. Doctor \n 2. lawyer \n 3. coder \n 4. scientist \n 5. actor \n 6. streamer \n 7. Freeloader");
             int num = mamaOHOHOHHHHH.nextInt();
             System.out.println(s.yourFutureOccupation(num));
-            // to be implemented minigames throughout the day with mom.
 
-
-
+            if(!s.weekdayOrWeekend()){
+                System.out.println("Since you are home and is currently doing nothing, mother wants to know if you are willing to help her with chores. y/n");
+                String wannaDoIt = mamaOHOHOHHHHH.nextLine();
+                while(wannaDoIt != "y" || wannaDoIt != "n"){
+                    System.out.println("READ THE DIRECTION ABOVE IT IS EITHER LOWER CASE y OR LOWER CASE n. MY LITERAL GRANDMA DID THIS NO PROBLEM.");
+                    wannaDoIt = mamaOHOHOHHHHH.nextLine();
+                }
+                System.out.println(s.choresAndStudy(wannaDoIt) );
+            }
             daysSurvived++;
+            System.out.println( name + " has survived" + daysSurvived + " days");
         }
 
-
-        System.out.println("you survived " + daysSurvived + " days");
     }
 }
