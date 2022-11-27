@@ -5,7 +5,7 @@ public class YourFateRunner {
         Scanner mamaOHOHOHHHHH = new Scanner(System.in);
         System.out.println("Welcome to Survive Mom Simulator. Input a character name: ");
         String name = mamaOHOHOHHHHH.nextLine();
-        SurviveMom s = new SurviveMom(name);;
+        SurviveMom s = new SurviveMom(name);
 
         System.out.println("You can choose to select an age to be at, but keep in mind this might make the game more difficult  \nThe older you are the more angry mom is gonna be that you still live with her\n do you wish to do so? y/n");
         String decideAnAge = mamaOHOHOHHHHH.nextLine();
@@ -19,12 +19,16 @@ public class YourFateRunner {
         while(!s.gameEnder()){
             System.out.println("Input a number to signify which day of the week you want to play(1 is mon, 7 is sun): ");
             int day = mamaOHOHOHHHHH.nextInt();
+            while(day < 1 || day > 7){
+                System.out.println("ONE TO SEVEN IDIOT. THIS IS WHY MOM IS ALWAYS PISSED");
+                day = mamaOHOHOHHHHH.nextInt();
+            }
             System.out.println(s.weekdayOrWeekend(day));
 
             System.out.println("You are sleeping like a baby on crack, ready to wake up? press 1 to continue");
             int wakeUpOrNah = mamaOHOHOHHHHH.nextInt();
             while(wakeUpOrNah != 1){
-                System.out.println("Bro, that ain't the number 1 @-@");
+                System.out.println("A jokester are we, just press 1 my guy, or just stay here forever. It's a simple spell but quite unbreakable.");
                 wakeUpOrNah = mamaOHOHOHHHHH.nextInt();
             }
             System.out.println(s.rollForTime(s.sleepUntil()));
@@ -33,19 +37,20 @@ public class YourFateRunner {
             System.out.println("Now, this is a multiple choice question. \n your dream occupation when you reach adult hood is \n");
             System.out.println(" 1. Doctor \n 2. lawyer \n 3. coder \n 4. scientist \n 5. actor \n 6. streamer \n 7. Freeloader");
             int num = mamaOHOHOHHHHH.nextInt();
+            while(num < 1 || num > 7){
+                System.out.println("just for that, I'm adding a point to the rage. Just follow the script");
+                num = mamaOHOHOHHHHH.nextInt();
+            }
             System.out.println(s.yourFutureOccupation(num));
 
             if(!s.weekdayOrWeekend()){
-                System.out.println("Since you are home and is currently doing nothing, mother wants to know if you are willing to help her with chores. y/n");
-                String wannaDoIt = mamaOHOHOHHHHH.nextLine();
-                while(wannaDoIt != "y" || wannaDoIt != "n"){
-                    System.out.println("READ THE DIRECTION ABOVE IT IS EITHER LOWER CASE y OR LOWER CASE n. MY LITERAL GRANDMA DID THIS NO PROBLEM.");
-                    wannaDoIt = mamaOHOHOHHHHH.nextLine();
-                }
-                System.out.println(s.choresAndStudy(wannaDoIt) );
+                System.out.println("Since you are home and is currently doing nothing, mother wants to know if you are willing to help her with chores. y for yes, anything else for no");
+                String doIt = mamaOHOHOHHHHH.next();
+                s.yOrN(doIt);
+                System.out.println(s.choresAndStudy(doIt));
             }
             daysSurvived++;
-            System.out.println( name + " has survived" + daysSurvived + " days");
+            System.out.println( name + " has survived " + daysSurvived + " days");
         }
 
     }

@@ -26,12 +26,12 @@ public class SurviveMom {
         if(oneToSeven >=1 && oneToSeven<=5){
             return "Taking it eazy I see";
         }
-        else if(oneToSeven >5 && oneToSeven<=7){
+        else
             rageMeter += 5;
-            return "Hardcore" + name + ", staying home during a weekend. " + getRageMeter();
+         return "Hardcore " + name + ", staying home during a weekend. " + getRageMeter();
+
         }
-        else return "Last time I counted, there was only seven days in a week.";
-    }
+
 
     /**
      *
@@ -79,6 +79,7 @@ public class SurviveMom {
      */
     public String yourFutureOccupation(int pick){
         String dialogue = "";
+
         if(pick >= 5){
             rageMeter = rageMeter + (10 * (pick - 4));
             dialogue += "you have picked a dead end existence. " + getRageMeter();
@@ -149,14 +150,18 @@ public class SurviveMom {
         }
         return "This wasn't suppose to happen.";
     }
-
-    public String choresAndStudy(String doItBro){
-        if(doItBro.equals("y")){
-            rageMeter= rageMeter - (int)(Math.random() * 15) + 1;
+public boolean yOrN(String yOrN){
+        if(yOrN.equals("y")){
+            return true;
+        } else return false;
+}
+    public String choresAndStudy(String doItBro) {
+        if (yOrN(doItBro)) {
+            rageMeter = rageMeter - (int) (Math.random() * 15) + 1;
             return "Mom is pleased her lazy child is finally doing something she can tell to her relatives with some sort of pride \nshe decided to be a little less mad at you. \n" + getRageMeter();
         } else
-            rageMeter = rageMeter + (int)(Math.random() * 5) + 1;
+            rageMeter = rageMeter + (int) (Math.random() * 5) + 1;
             return "Welp, mom expected that out of you, and she's not mad, just disappointed. \nJK. she's a bit pissed. " + getRageMeter();
-    }
+        }
 
-}
+    }
