@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class YourFateRunner {
     public static void main(String[] args) {
-        int daysSurvived = 0;
+        int daysSurvived = 1;
         Scanner mamaOHOHOHHHHH = new Scanner(System.in);
         System.out.println("Welcome to Survive Mom Simulator. Input a character name: ");
         String name = mamaOHOHOHHHHH.nextLine();
@@ -50,7 +50,17 @@ public class YourFateRunner {
                 System.out.println(s.chores(doIt));
             }
 
-            daysSurvived++;
+            if(s.weekdayOrWeekend()){
+                System.out.println("You arrived home at 8 pm cause you were doing some light skin activity with your friend group, mom tells you to eat and go to bed, and so you do, end of " + daysSurvived);
+            } else {
+                System.out.println("You did A LOT of stuff today... from sleeping, to resting to contemplating your pathetic life\n Mom has fed you and it is the end of the " + daysSurvived + " day");
+            }
+            System.out.println("proceed with next day? type anything except for the letter n to continue");
+            String endOfADay = mamaOHOHOHHHHH.nextLine();
+            while(endOfADay.equals("n")){
+                System.out.println("welp, I'll wait.");
+            }
+
             System.out.println( name + " has survived " + daysSurvived + " days");
             if(daysSurvived % 5 == 0){
                 System.out.println("You've made it pretty far along, eh young player. \nWanna be a baller and let computer RNG decide your fate? \nWanna go hard or go home? \n this is your chance. if you agree to this, it will reset the rage to a random number from 0 to 99. \n so, what would it be, wanna be a baller. \n type in full cap HELL YEAH to roll, and anything else to be boring and move on. ");
@@ -60,6 +70,7 @@ public class YourFateRunner {
                     s.getRageMeter();
                 }
             }
+            daysSurvived++;
         }
         s.getRageMeter();
     }
