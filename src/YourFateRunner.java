@@ -55,11 +55,6 @@ public class YourFateRunner {
             } else {
                 System.out.println("You did A LOT of stuff today... from sleeping, to resting to contemplating your pathetic life\n Mom has fed you and it is the end of the " + daysSurvived + " day");
             }
-            System.out.println("proceed with next day? type anything except for the letter n to continue");
-            String endOfADay = mamaOHOHOHHHHH.nextLine();
-            while(endOfADay.equals("n")){
-                System.out.println("welp, I'll wait.");
-            }
 
             System.out.println( name + " has survived " + daysSurvived + " days");
             if(daysSurvived % 5 == 0){
