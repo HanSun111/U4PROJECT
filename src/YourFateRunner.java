@@ -7,6 +7,12 @@ public class YourFateRunner {
         String name = mamaOHOHOHHHHH.nextLine();
         SurviveMom s = new SurviveMom(name);
 
+        System.out.println("Wanna be a baller and let computer RNG decide your fate? \nWanna go hard or go home? \n this is your chance. if you agree to this, it will reset the rage to a random number from 0 to 99. \n so, what would it be, wanna be a baller. \n type in full cap HELL YEAH to roll, and anything else to be boring and move on. ");
+        String youABallerBro = mamaOHOHOHHHHH.nextLine();
+        if (youABallerBro.equals("HELL YEAH")) {
+            s.YOLO();
+            System.out.println(s.getRageMeter());
+
         System.out.println("You can choose to select an age to be at, but keep in mind this might make the game more difficult  \nThe older you are the more angry mom is gonna be that you still live with her\n do you wish to do so? y/n");
         String decideAnAge = mamaOHOHOHHHHH.nextLine();
 
@@ -17,12 +23,6 @@ public class YourFateRunner {
         }
 
         while (!s.gameEnder()) {
-            System.out.println("Wanna be a baller and let computer RNG decide your fate? \nWanna go hard or go home? \n this is your chance. if you agree to this, it will reset the rage to a random number from 0 to 99. \n so, what would it be, wanna be a baller. \n type in full cap HELL YEAH to roll, and anything else to be boring and move on. ");
-            String youABallerBro = mamaOHOHOHHHHH.nextLine();
-            if (youABallerBro.equals("HELL YEAH")) {
-                s.YOLO();
-                System.out.println(s.getRageMeter());
-
                 System.out.println("Input a number to signify which day of the week you want to play(1 is mon, 7 is sun): ");
                 int day = mamaOHOHOHHHHH.nextInt();
                 while (day < 1 || day > 7) {
