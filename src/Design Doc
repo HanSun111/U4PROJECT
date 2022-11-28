@@ -13,10 +13,8 @@ GettingOutOfBed==> roll a random number between 6 to 12, the number you roll is 
 doSomeChores==> can choose to yes or no, if choose no, rage meter goes up for not helping mom, if choose yes, rage meter can go down depending on how much chores you do.
 confront mom ==> mom stops to talk to you about stuff, answer might fill rage meter
 eat==> pick what to eat, choose carefully or you might enrage mother.
-studyOrPlayGames==> we all know which choice fill up the rage meter.
-SleepWhen ==> roll dice from 9 to 3 to determine when to sleep
-gameplay==> puts all the methods together.
-YOLO ==> randomize difficulty
+SleepWhen ==> roll dice to determine when to sleep
+YOLO ==> a method that gives the player a choice to randomizes the rage meter from 0 to 99 given that they've reached a point.
 
 
 

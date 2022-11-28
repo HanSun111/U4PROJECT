@@ -47,11 +47,20 @@ public class YourFateRunner {
                 System.out.println("Since you are home and is currently doing nothing, mother wants to know if you are willing to help her with chores. y for yes, anything else for no");
                 String doIt = mamaOHOHOHHHHH.next();
                 s.yOrN(doIt);
-                System.out.println(s.choresAndStudy(doIt));
+                System.out.println(s.chores(doIt));
             }
+
             daysSurvived++;
             System.out.println( name + " has survived " + daysSurvived + " days");
+            if(daysSurvived % 5 == 0){
+                System.out.println("You've made it pretty far along, eh young player. \nWanna be a baller and let computer RNG decide your fate? \nWanna go hard or go home? \n this is your chance. if you agree to this, it will reset the rage to a random number from 0 to 99. \n so, what would it be, wanna be a baller. \n type in full cap HELL YEAH to roll, and anything else to be boring and move on. ");
+                String youABallerBro = mamaOHOHOHHHHH.nextLine();
+                if(youABallerBro.equals("HELL YEAH")){
+                    s.YOLO();
+                    s.getRageMeter();
+                }
+            }
         }
-
+        s.getRageMeter();
     }
 }

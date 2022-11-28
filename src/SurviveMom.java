@@ -58,23 +58,20 @@ public class SurviveMom {
             dialogue += "Mom is wondering why she ever wanted a child, you're walking on thin ice pal";
         }
         if(rageMeter <= 80 && rageMeter > 60){
-            dialogue += "Mom feels benevolent today, you can now choose how you get beat up. ";
+            dialogue += "Oh? what is this? a human being without the will to live? " + name + " has decided to dig their own grave.";
         }
         if(rageMeter <= 99 && rageMeter > 80){
             dialogue += name + ", stop. you're at death's door.";
         }
         if(rageMeter >= 100){
-            dialogue += "/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
+            return "/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
         }
-
         return "\nMom's rage is at: " + rageMeter + "%\n" + dialogue;
     }
 
-// add a print statement in runner class that introduces some jobs. Here's a list ==> freeloader, coder, lawyer, doctor, actor, pro gamer, streamer, designer etc
-
     /**
      *
-     * @param pick
+     * @param
      * @return
      */
     public String yourFutureOccupation(int pick){
@@ -155,7 +152,7 @@ public boolean yOrN(String yOrN){
             return true;
         } else return false;
 }
-    public String choresAndStudy(String doItBro) {
+    public String chores(String doItBro) {
         if (yOrN(doItBro)) {
             rageMeter = rageMeter - (int) (Math.random() * 15) + 1;
             return "Mom is pleased her lazy child is finally doing something she can tell to her relatives with some sort of pride \nshe decided to be a little less mad at you. \n" + getRageMeter();
@@ -163,5 +160,10 @@ public boolean yOrN(String yOrN){
             rageMeter = rageMeter + (int) (Math.random() * 5) + 1;
             return "Welp, mom expected that out of you, and she's not mad, just disappointed. \nJK. she's a bit pissed. " + getRageMeter();
         }
+
+        public void YOLO(){
+        rageMeter = (int)(Math.random() * 100);
+        }
+
 
     }
