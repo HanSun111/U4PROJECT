@@ -1,13 +1,27 @@
+/**
+ * SurviveMom class represents the mechanics of the game design with rageMeter, wakeUpTime
+ * and day. The use of name and age represents the player.
+ */
 public class SurviveMom {
     private String name;
     private int age;
     private int day;
     private double wakeUpTime;
     private int rageMeter = 0;
+
+    /**
+     *constructor for the class, creates a player based on the name given
+     * @param name sets the private string name to the name input from the runner.
+     */
     public SurviveMom(String name){
         this.name = name;
     }
 
+    /**
+     *another constructor for the class, creates a player based on name and age.
+     * @param name sets the private string name to the name input from the runner.
+     * @param age sets an age as well as name if the player chooses to do so in runner.
+     */
     public SurviveMom(String name, int age) {
         this.name = name;
         this.age = age;
@@ -17,9 +31,9 @@ public class SurviveMom {
     }
 
         /**
-         *
-         * @param oneToSeven
-         * @return
+         * String method for the class, returns dialogue based on the input parameter
+         * @param oneToSeven sets the private int day to the parameter
+         * @return returns a String
          */
     public String weekdayOrWeekend(int oneToSeven){
         day = oneToSeven;
@@ -34,8 +48,8 @@ public class SurviveMom {
 
 
     /**
-     *
-     * @return
+     *a boolean method for the SurviveMom class, returns t or f depending on the private int day
+     * @return true or false
      */
     public boolean weekdayOrWeekend(){
         if(day <= 5){
@@ -43,9 +57,10 @@ public class SurviveMom {
         } return false;
     }
 
-    public void rageMaxed(){
-
-    }
+    /**
+     * String method for the SurviveMom class
+     * @return returns dialogue based on the private int rageMeter with every 20 ragemeter getting new dialogue.
+     */
     public String getRageMeter() {
         String dialogue = "";
         if(rageMeter <= 20 ){
@@ -66,13 +81,13 @@ public class SurviveMom {
         if(rageMeter >= 100){
             return "\n/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
         }
-        return "\nMom's rage is at: " + rageMeter + "%\n" + dialogue;
+        return "\nMom's rage is at: " + rageMeter + "%\n" + dialogue.toString();
     }
 
     /**
-     *
-     * @param
-     * @return
+     *String method for SurviveMom class that gives dialogue based on int parameter input
+     * @param pick in representing each occupation
+     * @return dialogue base on pick
      */
     public String yourFutureOccupation(int pick){
         String dialogue = "";
@@ -86,12 +101,20 @@ public class SurviveMom {
         return dialogue;
     }
 
+    /**
+     * boolean method to determine when to end the game based on the rageMeter value
+     * @return returns true or false based on the rageMeter.
+     */
     public boolean gameEnder(){
         if(rageMeter > 100 ){
             return true;
         } return false;
     }
 
+    /**
+     * double method to roll for random time to wake up base on the decisions of weekdayOrWeekend
+     * @return returns the value of the time the player wakes up.
+     */
     public double sleepUntil(){
         if(weekdayOrWeekend()){
             wakeUpTime = 6 + Math.random() * 5;
@@ -102,9 +125,9 @@ public class SurviveMom {
     }
 
     /**
-     *
-     * @param
-     * @return
+     *String method for the class that round the time to the nearest hour if the random has decimals over 0.59
+     * @param time sets the time of which the character wakes up.
+     * @return dialogue given 4 different situations.
      */
     public String rollForTime(double time) {
         double wakeUp = time;
@@ -147,11 +170,23 @@ public class SurviveMom {
         }
         return "This wasn't suppose to happen.";
     }
-public boolean yOrN(String yOrN){
+
+    /**
+     * boolean class for the class
+     * @param yOrN a string parameter that takes in a value and assess if it is "y"
+     * @return true or flse based on if the parameter is equal to "y"
+     */
+    public boolean yOrN(String yOrN){
         if(yOrN.equals("y")){
             return true;
         } else return false;
 }
+
+    /**
+     * String method for SurviveMom class that gives you a choice to do chores
+     * @param doItBro String parameter that use the previous method to assess if the person wants to do chores or not
+     * @return returns string base on boolean value assessed.
+     */
     public String chores(String doItBro) {
         if (yOrN(doItBro)) {
             rageMeter = rageMeter - (int) (Math.random() * 15) + 1;
@@ -161,7 +196,10 @@ public boolean yOrN(String yOrN){
             return "Welp, mom expected that out of you, and she's not mad, just disappointed. \nJK. she's a bit pissed. " + getRageMeter();
         }
 
-        public void YOLO(){
+    /** void method for the class that sets rage to a random num.
+     * sets rage meter to a random number, in case someone's feeling ballsy.
+     */
+    public void YOLO(){
         rageMeter = (int)(Math.random() * 100);
         }
 
