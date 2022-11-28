@@ -64,7 +64,7 @@ public class SurviveMom {
             dialogue += name + ", stop. you're at death's door.";
         }
         if(rageMeter >= 100){
-            return "/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
+            return "\n/YYYYYYYYYYYYY\\             |\n|    R.I.P    |\n|             |\n|    DON'T    |\n|     PISS    |\n|    OFF      |\n|     MOM!    |\nTTTTTTTTTTTTTTT";
         }
         return "\nMom's rage is at: " + rageMeter + "%\n" + dialogue;
     }
